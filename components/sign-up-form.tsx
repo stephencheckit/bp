@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { createClient } from "@/lib/supabase/client";
+import { cn, ALLOWED_EMAIL_DOMAINS } from "@/lib/utils";
+import { authService } from "@/lib/auth-service";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -29,7 +29,6 @@ export function SignUpForm({
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
-    const supabase = createClient();
     setIsLoading(true);
     setError(null);
 
@@ -40,14 +39,7 @@ export function SignUpForm({
     }
 
     try {
-      const { error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          emailRedirectTo: `${window.location.origin}/protected`,
-        },
-      });
-      if (error) throw error;
+      await authService.signUp(email, password);
       router.push("/auth/sign-up-success");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
@@ -61,7 +53,9 @@ export function SignUpForm({
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl">Sign up</CardTitle>
-          <CardDescription>Create a new account</CardDescription>
+          <CardDescription>
+            Create a new account with your {ALLOWED_EMAIL_DOMAINS.join(' or ')} email
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSignUp}>
@@ -71,11 +65,14 @@ export function SignUpForm({
                 <Input
                   id="email"
                   type="email"
-                  placeholder="m@example.com"
+                  placeholder="user@bp.com or user@checkit.net"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
+                <p className="text-xs text-muted-foreground">
+                  Only {ALLOWED_EMAIL_DOMAINS.join(' and ')} email addresses are allowed
+                </p>
               </div>
               <div className="grid gap-2">
                 <div className="flex items-center">

@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { createClient } from "@/lib/supabase/client";
+import { cn, ALLOWED_EMAIL_DOMAINS } from "@/lib/utils";
+import { authService } from "@/lib/auth-service";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -26,16 +26,11 @@ export function ForgotPasswordForm({
 
   const handleForgotPassword = async (e: React.FormEvent) => {
     e.preventDefault();
-    const supabase = createClient();
     setIsLoading(true);
     setError(null);
 
     try {
-      // The url which will be included in the email. This URL needs to be configured in your redirect URLs in the Supabase dashboard at https://supabase.com/dashboard/project/_/auth/url-configuration
-      const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/auth/update-password`,
-      });
-      if (error) throw error;
+      await authService.resetPassword(email);
       setSuccess(true);
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
@@ -64,8 +59,7 @@ export function ForgotPasswordForm({
           <CardHeader>
             <CardTitle className="text-2xl">Reset Your Password</CardTitle>
             <CardDescription>
-              Type in your email and we&apos;ll send you a link to reset your
-              password
+              Enter your {ALLOWED_EMAIL_DOMAINS.join(' or ')} email address
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -76,11 +70,14 @@ export function ForgotPasswordForm({
                   <Input
                     id="email"
                     type="email"
-                    placeholder="m@example.com"
+                    placeholder="user@bp.com or user@checkit.net"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
+                  <p className="text-xs text-muted-foreground">
+                    Only {ALLOWED_EMAIL_DOMAINS.join(' and ')} email addresses are allowed
+                  </p>
                 </div>
                 {error && <p className="text-sm text-red-500">{error}</p>}
                 <Button type="submit" className="w-full" disabled={isLoading}>

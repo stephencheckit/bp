@@ -1,6 +1,6 @@
 "use client";
 
-import { createClient } from "@/lib/supabase/client";
+import { authService } from "@/lib/auth-service";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
@@ -8,9 +8,14 @@ export function LogoutButton() {
   const router = useRouter();
 
   const logout = async () => {
-    const supabase = createClient();
-    await supabase.auth.signOut();
-    router.push("/auth/login");
+    try {
+      await authService.signOut();
+      router.push("/auth/login");
+    } catch (error) {
+      console.error("Logout failed:", error);
+      // Still redirect to login page even if logout fails
+      router.push("/auth/login");
+    }
   };
 
   return <Button onClick={logout}>Logout</Button>;
