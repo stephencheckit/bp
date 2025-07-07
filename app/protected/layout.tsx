@@ -1,51 +1,53 @@
-import { EnvVarWarning } from "@/components/env-var-warning";
 import { AuthButton } from "@/components/auth-button";
-import { ThemeSwitcher } from "@/components/theme-switcher";
-import { hasEnvVars } from "@/lib/utils";
-import Link from "next/link";
-import Image from "next/image";
+import { createClient } from "@/lib/supabase/server";
+import { redirect } from "next/navigation";
+import SidebarNavigation from "@/components/sidebar-navigation";
+import { LanguageProvider } from "@/lib/language-context";
 
-export default function ProtectedLayout({
+export default async function ProtectedLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <main className="min-h-screen flex flex-col items-center">
-      <div className="flex-1 w-full flex flex-col gap-20 items-center">
-        <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-          <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-            <div className="flex gap-5 items-center font-semibold">
-              <Link href={"/"} className="flex items-center gap-2">
-                <Image
-                  src="https://www.checkit.net/hubfs/website/img/brand/checkit-logo-horizontal-standard-rgb-blue.svg"
-                  alt="Checkit"
-                  width={120}
-                  height={40}
-                  className="h-8 w-auto"
-                />
-              </Link>
-            </div>
-            {!hasEnvVars ? <EnvVarWarning /> : <AuthButton />}
-          </div>
-        </nav>
-        <div className="flex-1 flex flex-col gap-20 max-w-5xl p-5">
-          {children}
-        </div>
+  const supabase = await createClient();
 
-        <footer className="w-full border-t bg-muted/30">
-          <div className="max-w-5xl mx-auto px-5 py-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                <p className="font-medium">© {new Date().getFullYear()} Checkit | All Rights Reserved</p>
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    redirect("/auth/login");
+  }
+
+  return (
+    <LanguageProvider>
+      <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
+        {/* Sidebar Navigation */}
+        <SidebarNavigation />
+        
+        {/* Main Content Area */}
+        <div className="flex-1 flex flex-col overflow-hidden lg:ml-0">
+          {/* Header */}
+          <header className="bg-white dark:bg-gray-950 shadow-sm border-b border-gray-200 dark:border-gray-800">
+            <div className="flex items-center justify-between px-4 py-3 lg:px-6">
+              <div className="flex items-center">
+                <div className="lg:hidden mr-4">
+                  {/* Space for mobile menu button */}
+                </div>
+                <h1 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                  Checkit & BP Private Microsite
+                </h1>
               </div>
-              <div className="flex items-center gap-4">
-                <ThemeSwitcher />
-              </div>
+              <AuthButton />
             </div>
-          </div>
-        </footer>
+          </header>
+
+          {/* Main Content */}
+          <main className="flex-1 overflow-y-auto p-4 lg:p-6">
+            {children}
+          </main>
+        </div>
       </div>
-    </main>
+    </LanguageProvider>
   );
 }
