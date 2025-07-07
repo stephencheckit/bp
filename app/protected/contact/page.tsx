@@ -196,15 +196,11 @@ export default function ContactPage() {
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-3 p-3 border rounded-lg">
-                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <User className="h-5 w-5 text-green-600" />
-                  </div>
-                </div>
               </div>
             </div>
-            
-           
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Feedback Section */}
       <Card>
