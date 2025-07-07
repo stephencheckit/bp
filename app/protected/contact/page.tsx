@@ -200,65 +200,11 @@ export default function ContactPage() {
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
                     <User className="h-5 w-5 text-green-600" />
                   </div>
-                  <div className="flex-1">
-                    <h5 className="font-medium">Lisa Schmidt</h5>
-                    <p className="text-sm text-muted-foreground">European Expansion Lead</p>
-                    <div className="flex items-center gap-2 mt-2">
-                      <Mail className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm">lisa.schmidt@checkit.net</span>
-                    </div>
-                    <div className="flex items-center gap-2 mt-1">
-                      <MapPin className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm">Berlin, Germany</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
             
-            <div>
-              <h4 className="font-semibold mb-4">Technical Support</h4>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3 p-3 border rounded-lg">
-                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                    <User className="h-5 w-5 text-purple-600" />
-                  </div>
-                  <div className="flex-1">
-                    <h5 className="font-medium">Tom Mitchell</h5>
-                    <p className="text-sm text-muted-foreground">CTO & Co-Founder</p>
-                    <div className="flex items-center gap-2 mt-2">
-                      <Mail className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm">tom.mitchell@checkit.net</span>
-                    </div>
-                    <div className="flex items-center gap-2 mt-1">
-                      <MapPin className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm">London, UK</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-3 p-3 border rounded-lg">
-                  <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-                    <Phone className="h-5 w-5 text-orange-600" />
-                  </div>
-                  <div className="flex-1">
-                    <h5 className="font-medium">24/7 Support Desk</h5>
-                    <p className="text-sm text-muted-foreground">Critical Issues & Emergency</p>
-                    <div className="flex items-center gap-2 mt-2">
-                      <Phone className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm">+44 20 7123 4567</span>
-                    </div>
-                    <div className="flex items-center gap-2 mt-1">
-                      <Mail className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm">support@checkit.net</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+           
 
       {/* Feedback Section */}
       <Card>
@@ -329,24 +275,6 @@ export default function ContactPage() {
                 <p className="flex items-center gap-2">
                   <Clock className="h-4 w-4 text-muted-foreground" />
                   Mon-Fri: 9:00 AM - 6:00 PM GMT
-                </p>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-2">Checkit Berlin Office</h4>
-              <div className="space-y-2 text-sm">
-                <p className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-muted-foreground" />
-                  Mitte Str. 45, 10179 Berlin, Germany
-                </p>
-                <p className="flex items-center gap-2">
-                  <Phone className="h-4 w-4 text-muted-foreground" />
-                  +49 30 1234 5678
-                </p>
-                <p className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-muted-foreground" />
-                  Mon-Fri: 9:00 AM - 6:00 PM CET
                 </p>
               </div>
             </div>

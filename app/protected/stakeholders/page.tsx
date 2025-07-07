@@ -170,14 +170,14 @@ export default function StakeholdersPage() {
                   <Users className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
-                  <h4 className="font-semibold">Tom Mitchell</h4>
-                  <p className="text-sm text-muted-foreground">CTO & Co-Founder</p>
+                  <h4 className="font-semibold">Kris Shaw</h4>
+                  <p className="text-sm text-muted-foreground">CFO</p>
                 </div>
               </div>
               <div className="space-y-2 text-sm">
                 <p className="flex items-center gap-2">
                   <Mail className="h-4 w-4 text-muted-foreground" />
-                  tom.mitchell@checkit.net
+                  kris.shaw@checkit.net
                 </p>
                 <p className="flex items-center gap-2">
                   <MapPin className="h-4 w-4 text-muted-foreground" />
@@ -185,7 +185,7 @@ export default function StakeholdersPage() {
                 </p>
                 <p className="flex items-center gap-2">
                   <Briefcase className="h-4 w-4 text-muted-foreground" />
-                  Technical Strategy
+                  Customer Success
                 </p>
               </div>
             </div>
@@ -196,18 +196,18 @@ export default function StakeholdersPage() {
                   <Users className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
-                  <h4 className="font-semibold">Lisa Schmidt</h4>
-                  <p className="text-sm text-muted-foreground">European Expansion Lead</p>
+                  <h4 className="font-semibold">Steve Tonks</h4>
+                  <p className="text-sm text-muted-foreground">VP of Sales</p>
                 </div>
               </div>
               <div className="space-y-2 text-sm">
                 <p className="flex items-center gap-2">
                   <Mail className="h-4 w-4 text-muted-foreground" />
-                  lisa.schmidt@checkit.net
+                  steve.tonks@checkit.net
                 </p>
                 <p className="flex items-center gap-2">
                   <MapPin className="h-4 w-4 text-muted-foreground" />
-                  Berlin, Germany
+                  London, UK
                 </p>
                 <p className="flex items-center gap-2">
                   <Briefcase className="h-4 w-4 text-muted-foreground" />
@@ -219,58 +219,7 @@ export default function StakeholdersPage() {
         </CardContent>
       </Card>
 
-      {/* Governance Structure */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Building className="h-5 w-5" />
-            Governance Structure
-          </CardTitle>
-          <CardDescription>
-            How we manage and oversee the partnership
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <h4 className="font-semibold mb-2">Strategic Board</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                Quarterly executive reviews and strategic planning
-              </p>
-              <div className="space-y-1 text-xs">
-                <p>• Sarah Johnson (BP)</p>
-                <p>• Tom Mitchell (Checkit)</p>
-                <p>• Marcus Weber (BP)</p>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <h4 className="font-semibold mb-2">Operational Committee</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                Monthly operational reviews and issue resolution
-              </p>
-              <div className="space-y-1 text-xs">
-                <p>• David Chen (BP)</p>
-                <p>• April Watts (Checkit)</p>
-                <p>• Lisa Schmidt (Checkit)</p>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <h4 className="font-semibold mb-2">Working Groups</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                Weekly tactical execution and delivery
-              </p>
-              <div className="space-y-1 text-xs">
-                <p>• Technical Integration</p>
-                <p>• Training & Support</p>
-                <p>• German Expansion</p>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
+      
       {/* Communication Channels */}
       <Card>
         <CardHeader>
