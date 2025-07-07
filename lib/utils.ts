@@ -20,7 +20,6 @@ export const isValidEmailDomain = (email: string): boolean => {
 
 // Helper function to get domain validation error message
 export const getDomainErrorMessage = (context: 'signup' | 'reset' = 'signup'): string => {
-  const baseMessage = `Only ${ALLOWED_EMAIL_DOMAINS.join(' and ')} email addresses are allowed`;
   return context === 'reset' 
     ? `Password reset is only available for ${ALLOWED_EMAIL_DOMAINS.join(' and ')} email addresses`
     : `Access restricted to ${ALLOWED_EMAIL_DOMAINS.join(' and ')} email addresses only`;
