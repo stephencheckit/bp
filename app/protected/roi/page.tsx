@@ -6,11 +6,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { AlertTriangle, TrendingUp, DollarSign, Clock, Shield, Calculator, BarChart3, Zap, AlertCircle, PlayCircle, Cpu, Eye, RefreshCw, Target, Users, Phone, Mail } from "lucide-react";
+import { AlertTriangle, TrendingUp, DollarSign, Clock, Shield, Calculator, BarChart3, Zap, AlertCircle, Cpu, Eye, RefreshCw, Target, Users, Phone } from "lucide-react";
 import { useLanguage } from '@/lib/language-context';
 
 export default function ROIPage() {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     agingAssets: 10,
     kwhCost: 0.25,

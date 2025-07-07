@@ -41,10 +41,6 @@ export interface Translations {
     metrics: {
       ukLocations: string;
       ukLocationsDesc: string;
-      germanyOpportunity: string;
-      germanyOpportunityDesc: string;
-      germanSites: string;
-      germanSitesDesc: string;
       roiGrowth: string;
       roiGrowthDesc: string;
     };
@@ -80,10 +76,6 @@ export interface Translations {
     metrics: {
       activeLocations: string;
       activeLocationsDesc: string;
-      systemUptime: string;
-      systemUptimeDesc: string;
-      staffTrained: string;
-      staffTrainedDesc: string;
     };
     technology: {
       title: string;
@@ -108,9 +100,6 @@ export interface Translations {
       highliandsDesc: string;
     };
     performanceMetrics: {
-      annualSavings: string;
-      downtimeReduction: string;
-      complianceRate: string;
       monitoring: string;
     };
   };
@@ -156,29 +145,7 @@ export interface Translations {
       phase3: string;
       phase3Desc: string;
     };
-    projections: {
-      revenueTitle: string;
-      revenueDesc: string;
-      teamTitle: string;
-      teamDesc: string;
-      year1: string;
-      year2: string;
-      year3: string;
-      threeYearTotal: string;
-      customerSuccess: string;
-      technicalSupport: string;
-      technicians: string;
-      regionalManager: string;
-      totalHires: string;
-    };
-    successMetrics: {
-      title: string;
-      desc: string;
-      uptimeTarget: string;
-      customerSatisfaction: string;
-      costReduction: string;
-      monthDeployment: string;
-    };
+
     cta: {
       title: string;
       desc: string;
@@ -197,9 +164,6 @@ export interface Translations {
       innovative: string;
     };
     stats: {
-      uptime: string;
-      sensors: string;
-      data: string;
       sites: string;
     };
     platform: {
@@ -220,50 +184,18 @@ export interface Translations {
       automation: string;
       reporting: string;
     };
-    integrations: {
-      title: string;
-      desc: string;
-      sap: string;
-      microsoft: string;
-      salesforce: string;
-      slack: string;
-    };
+
   };
 
   // Stakeholders page
   stakeholders: {
     title: string;
     subtitle: string;
-    bp: {
-      title: string;
-      sarah: string;
-      sarahRole: string;
-      marcus: string;
-      marcusRole: string;
-      david: string;
-      davidRole: string;
-    };
+
     checkit: {
       title: string;
       april: string;
       aprilRole: string;
-      tom: string;
-      tomRole: string;
-      lisa: string;
-      lisaRole: string;
-    };
-    governance: {
-      title: string;
-      structure: string;
-      meetings: string;
-      escalation: string;
-      communication: string;
-    };
-    contact: {
-      title: string;
-      emergency: string;
-      business: string;
-      technical: string;
     };
   };
 
@@ -271,29 +203,95 @@ export interface Translations {
   roi: {
     title: string;
     subtitle: string;
-    current: {
-      title: string;
-      roi: string;
-      savings: string;
-      breakdown: string;
-    };
     calculator: {
       title: string;
+      subtitle: string;
+      startCalculator: string;
+    };
+    hiddenCosts: {
+      title: string;
+      subtitle: string;
+      additionalAlerts: string;
+      additionalAlertsDesc: string;
+      higherMaintenance: string;
+      higherMaintenanceDesc: string;
+      foregoneSales: string;
+      foregoneSalesDesc: string;
+      operatorTime: string;
+      operatorTimeDesc: string;
+      energyImpact: string;
+      energyImpactDesc: string;
+      foodSafety: string;
+      foodSafetyDesc: string;
+    };
+    partnership: {
+      title: string;
       desc: string;
-      investment: string;
-      returns: string;
-      netRoi: string;
+      videoPlaceholder: string;
     };
-    benefits: {
+    calculatorForm: {
       title: string;
-      operational: string;
-      financial: string;
-      strategic: string;
+      subtitle: string;
+      siteInfo: string;
+      modelBased: string;
+      agingAssets: string;
+      agingAssetsDesc: string;
+      kwhCost: string;
+      kwhCostDesc: string;
+      numberOfSites: string;
+      numberOfSitesDesc: string;
+      drinkPrice: string;
+      drinkPriceDesc: string;
+      skipPurchase: string;
+      skipPurchaseDesc: string;
     };
-    projections: {
+    annualCost: {
       title: string;
-      fiveYear: string;
-      totalValue: string;
+      additionalAlerts: string;
+      higherMaintenance: string;
+      foregoneSales: string;
+      additionalEnergy: string;
+      totalPerSite: string;
+      totalAllSites: string;
+      savingsPerSite: string;
+      savingsAllSites: string;
+      withAssetIntelligence: string;
+    };
+
+    calculations: {
+      title: string;
+      alertsCalc: string;
+      maintenanceCalc: string;
+      salesCalc: string;
+      energyCalc: string;
+    };
+    predictive: {
+      title: string;
+      desc: string;
+      pocResults: string;
+      opportunity: string;
+      implementation: string;
+      availability: string;
+    };
+    transform: {
+      title: string;
+      desc: string;
+      predictiveMaintenance: string;
+      predictiveDesc: string;
+      intelligentMonitoring: string;
+      intelligentDesc: string;
+      energyOptimisation: string;
+      energyDesc: string;
+      potentialRoi: string;
+      roiDesc: string;
+    };
+    cta: {
+      title: string;
+      desc: string;
+      currentCost: string;
+      currentCostDesc: string;
+      potentialSavings: string;
+      potentialSavingsDesc: string;
     };
   };
 
@@ -311,8 +309,6 @@ export interface Translations {
       title: string;
       april: string;
       aprilRole: string;
-      tom: string;
-      tomRole: string;
     };
     feedback: {
       title: string;
